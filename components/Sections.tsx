@@ -159,19 +159,26 @@ export function Notes() {
         </div>
       ) : (
         <div className="grid gap-5 sm:grid-cols-2">
-          {NOTES.map((n) => (
-            <Link
+          {NOTES.map((n) => {
+            const external = n.href.startsWith("http");
+            const Card = external ? "a" : Link;
+            return (
+            <Card
               key={n.slug}
               href={n.href}
+              {...(external ? { target: "_blank", rel: "noopener" } : {})}
               className="rounded-lg border border-line bg-surface p-6 transition-colors hover:border-accent/40"
             >
               <p className="font-mono text-xs text-faint">{n.date}</p>
               <h3 className="mt-2 font-display text-lg font-semibold text-ink">
                 {n.title}
               </h3>
-              <p className="mt-2 text-sm text-muted">{n.summary}</p>
-            </Link>
-          ))}
+              <p className="mt-2 text-sm text-muted">
+                {n.summary}
+                {external ? " ↗" : ""}
+              </p>
+            </Card>
+          );})}
         </div>
       )}
     </Section>

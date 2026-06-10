@@ -2,10 +2,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/content/data";
 
+const TITLE = "Why Averages Lie in Capacity Planning";
+const DESCRIPTION =
+  "Averaging percentiles across unequal populations produces numbers that look precise and mean nothing. Aggregate per entity first.";
+
 export const metadata: Metadata = {
-  title: `Why Averages Lie in Capacity Planning — ${SITE.name}`,
-  description:
-    "Averaging percentiles across unequal populations produces numbers that look precise and mean nothing. Aggregate per entity first.",
+  title: `${TITLE} — ${SITE.name}`,
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: `${SITE.url}/notes/averages-lie/`,
+    siteName: SITE.name,
+    type: "article",
+  },
+  twitter: { card: "summary", title: TITLE, description: DESCRIPTION },
 };
 
 export default function AveragesLie() {

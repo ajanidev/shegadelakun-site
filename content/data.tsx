@@ -53,6 +53,7 @@ export const SITE = {
   name: "Sheg Adelakun",
   fullName: 'Olusegun "Sheg" Adelakun',
   domain: "shegadelakun.com",
+  url: "https://www.shegadelakun.com",
   title: "Sheg Adelakun — Cloud Performance Engineer",
   description:
     "Senior Cloud Performance Engineer focused on cloud infrastructure, Kubernetes performance, observability, reliability engineering, and cost optimization.",
@@ -65,7 +66,6 @@ export const SITE = {
   },
 };
 
-// TODO: replace with your real public profiles before deploying.
 export const CONTACT = {
   email: "sheg.adelakun@gmail.com",
   linkedin: "https://www.linkedin.com/in/sheg-a-a14197b9",
@@ -244,11 +244,20 @@ export const NOTES: Note[] = [
       "Averaging percentiles across unequal populations produces numbers that look precise and mean nothing. Aggregate per entity first.",
     href: "/notes/averages-lie/",
   },
+  {
+    slug: "finops-guardrails",
+    title: "Designing Safe FinOps Guardrails",
+    date: "2026-06-09",
+    summary:
+      "Cost automation is automation with write access to production. Five guardrails that let it earn trust instead of demanding it.",
+    href: "/notes/finops-guardrails/",
+  },
   // Staged future titles — uncomment and write the page when ready:
   // { slug: "arm64-lessons", title: "Lessons from an ARM64 migration", date: "", summary: "", href: "/notes/arm64-lessons/" },
   // { slug: "in-place-resize", title: "Understanding Kubernetes in-place pod resize", date: "", summary: "", href: "/notes/in-place-resize/" },
-  // { slug: "finops-guardrails", title: "Designing safe FinOps guardrails", date: "", summary: "", href: "/notes/finops-guardrails/" },
   // { slug: "what-perf-means", title: "What performance engineering actually means", date: "", summary: "", href: "/notes/what-perf-means/" },
+  // External posts (e.g. Medium) work too: use the absolute URL as href and
+  // the card renders as an external link automatically.
 ];
 
 export const NOTES_EMPTY_STATE =

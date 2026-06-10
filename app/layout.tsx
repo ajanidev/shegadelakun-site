@@ -8,11 +8,11 @@ import Observability from "@/components/Observability";
 export const metadata: Metadata = {
   title: SITE.title,
   description: SITE.description,
-  metadataBase: new URL(`https://${SITE.domain}`),
+  metadataBase: new URL(SITE.url),
   openGraph: {
     title: SITE.title,
     description: SITE.description,
-    url: `https://${SITE.domain}`,
+    url: SITE.url,
     siteName: SITE.name,
     type: "website",
   },
