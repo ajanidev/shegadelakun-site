@@ -1,0 +1,35 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-078f6dfb37dff419.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-2aa030c9ba2867e3.js",
+      "static/chunks/main-app-1b60fde580a1afe8.js",
+      "static/chunks/app/_not-found/page-b6dde90ae1698711.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-078f6dfb37dff419.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-2aa030c9ba2867e3.js",
+      "static/chunks/main-app-1b60fde580a1afe8.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/layout-f7021fcad24c1c7f.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-078f6dfb37dff419.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-2aa030c9ba2867e3.js",
+      "static/chunks/main-app-1b60fde580a1afe8.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/page-3637a80e6fdc687a.js"
+    ],
+    "/notes/averages-lie/page": [
+      "static/chunks/webpack-078f6dfb37dff419.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-2aa030c9ba2867e3.js",
+      "static/chunks/main-app-1b60fde580a1afe8.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/app/notes/averages-lie/page-b74fd6f462f3d51b.js"
+    ]
+  }
+}

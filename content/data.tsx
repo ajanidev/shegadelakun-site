@@ -67,9 +67,9 @@ export const SITE = {
 
 // TODO: replace with your real public profiles before deploying.
 export const CONTACT = {
-  email: "hello@shegadelakun.com",
-  linkedin: "https://www.linkedin.com/in/shegadelakun",
-  github: "https://github.com/shegadelakun",
+  email: "sheg.adelakun@gmail.com",
+  linkedin: "https://www.linkedin.com/in/sheg-a-a14197b9",
+  github: "https://github.com/ajanidev",
   // Drop your resume at /public/resume.pdf (or set to null to hide the link).
   resume: "/resume.pdf" as string | null,
 };
