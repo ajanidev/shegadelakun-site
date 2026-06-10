@@ -1,6 +1,10 @@
 import Section from "@/components/Section";
 import CredentialBadge from "@/components/CredentialBadge";
-import { CREDENTIALS, CASE_STUDIES } from "@/content/data";
+import {
+  CREDENTIALS,
+  CASE_STUDIES,
+  CASE_STUDY_THEMES,
+} from "@/content/data";
 
 export default function Proof() {
   return (
@@ -61,47 +65,69 @@ export default function Proof() {
         ))}
       </ul>
 
-      {/* Selected work */}
+      {/* Selected work, grouped by theme */}
       <h3 className="mt-16 font-mono text-xs uppercase tracking-wider text-faint">
         Selected work
       </h3>
-      <div className="mt-5 space-y-4">
-        {CASE_STUDIES.map((cs) => (
-          <details
-            key={cs.id}
-            className="case-study rounded-lg border border-line bg-surface"
-          >
-            <summary className="flex items-start gap-4 p-6">
-              <span
-                aria-hidden="true"
-                className="chev mt-1 font-mono text-accent"
-              >
-                ›
-              </span>
-              <span className="flex-1">
-                <span className="block font-display text-lg font-semibold text-ink">
-                  {cs.title}
-                </span>
-                <span className="mt-1 block text-sm text-muted">
-                  {cs.summary}
-                </span>
-              </span>
-            </summary>
-            <div className="border-t border-line px-6 py-5 pl-[3.25rem]">
-              <p className="text-sm leading-relaxed text-ink">{cs.detail}</p>
-              <ul className="mt-4 flex flex-wrap gap-2" aria-label="Topics">
-                {cs.tags.map((t) => (
-                  <li
-                    key={t}
-                    className="rounded border border-line px-2 py-0.5 font-mono text-xs text-faint"
+      <div className="mt-5 space-y-10">
+        {CASE_STUDY_THEMES.map((theme) => {
+          const items = CASE_STUDIES.filter((cs) => cs.theme === theme);
+          if (items.length === 0) return null;
+          return (
+            <div key={theme}>
+              <h4 className="flex items-center gap-3 font-display text-sm font-semibold text-accent">
+                <span
+                  aria-hidden="true"
+                  className="h-px w-6 bg-accent/40"
+                />
+                {theme}
+              </h4>
+              <div className="mt-4 space-y-4">
+                {items.map((cs) => (
+                  <details
+                    key={cs.id}
+                    className="case-study rounded-lg border border-line bg-surface"
                   >
-                    {t}
-                  </li>
+                    <summary className="flex items-start gap-4 p-6">
+                      <span
+                        aria-hidden="true"
+                        className="chev mt-1 font-mono text-accent"
+                      >
+                        ›
+                      </span>
+                      <span className="flex-1">
+                        <span className="block font-display text-lg font-semibold text-ink">
+                          {cs.title}
+                        </span>
+                        <span className="mt-1 block text-sm text-muted">
+                          {cs.summary}
+                        </span>
+                      </span>
+                    </summary>
+                    <div className="border-t border-line px-6 py-5 pl-[3.25rem]">
+                      <p className="text-sm leading-relaxed text-ink">
+                        {cs.detail}
+                      </p>
+                      <ul
+                        className="mt-4 flex flex-wrap gap-2"
+                        aria-label="Topics"
+                      >
+                        {cs.tags.map((t) => (
+                          <li
+                            key={t}
+                            className="rounded border border-line px-2 py-0.5 font-mono text-xs text-faint"
+                          >
+                            {t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
                 ))}
-              </ul>
+              </div>
             </div>
-          </details>
-        ))}
+          );
+        })}
       </div>
     </Section>
   );

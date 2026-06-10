@@ -159,7 +159,9 @@ export function Notes() {
         </div>
       ) : (
         <div className="grid gap-5 sm:grid-cols-2">
-          {NOTES.map((n) => {
+          {[...NOTES]
+            .sort((a, b) => b.date.localeCompare(a.date))
+            .map((n) => {
             const external = n.href.startsWith("http");
             const Card = external ? "a" : Link;
             return (
